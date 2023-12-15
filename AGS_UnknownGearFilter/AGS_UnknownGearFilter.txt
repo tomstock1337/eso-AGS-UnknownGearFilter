@@ -9,11 +9,10 @@
 ## Version: 1.0
 ## Author: tomstock
 ## APIVersion: 100037
-## SavedVariables: AGS_UGVars
+## SavedVariables: AGS_UGFVars
 ## DependsOn: AwesomeGuildStore LibAddonMenu-2.0>=34 LibAddonMenuMultiSelectDropdown
 
 bootstrap.lua
 AGS.lua
-Settings.lua
-AGS_UnknownGear.lua
+AGS_UnknownGearFilter.lua
 

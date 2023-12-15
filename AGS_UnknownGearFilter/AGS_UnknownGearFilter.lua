@@ -4,10 +4,7 @@ Addon.DisplayName = "AGS_UnknownGearFilter"
 Addon.Author = "tomstock"
 Addon.Version = "1.0"
 
-
 AGS_UGF.savedVars = {}
-
-
 
 function AGS_UGF.onLoad(eventCode, name)
 
