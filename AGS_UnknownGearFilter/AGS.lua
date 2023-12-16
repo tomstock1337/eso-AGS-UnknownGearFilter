@@ -17,18 +17,8 @@ function UnknownGearFilter:Initialize()
   local filterIcons = {}
   filterIcons[1] = {
     id = 1,
-    label = "Unknown Weapons",
-    icon = "EsoUI/Art/CharacterCreate/charactercreate_faceicon_%s.dds",
-  }
-  filterIcons[2] = {
-    id = 2,
-    label = "Unknown Armor",
-    icon = "EsoUI/Art/CharacterCreate/charactercreate_faceicon_%s.dds",
-  }
-  filterIcons[3] = {
-    id = 3,
-    label = "Unknown Jewelry",
-    icon = "EsoUI/Art/CharacterCreate/charactercreate_faceicon_%s.dds",
+    label = "Unknown gear",
+    icon = "/esoui/art/tutorial/tutorial_collections_tabicon_itemsets_%s.dds",
   }
 
   --!need to get FILTER_ID.UNKNOWN_GEAR_FILTER registered in AGS FilterIds.lua
@@ -40,27 +30,14 @@ function UnknownGearFilter:Initialize()
   })
 end
 
-
-function UnknownGearFilter:SetSelected(value, selected, silent)
-	MultiChoiceFilterBase.SetSelected(self, value, selected, silent)
-
-end
-
-
-function UnknownGearFilter:SetValues(selection)
-
-  self:HandleChange(currentSelection)
-end
-
-
-function UnknownGearFilter:Reset(silent)
-
-	MultiChoiceFilterBase.Reset(self, silent)
-end
-
 function UnknownGearFilter:FilterLocalResult(itemData)
-
-  return self.localSelection[value]
+  local itemLinkItemType, itemLinkSpecializedItemType = GetItemLinkItemType(itemData.itemLink)
+  if itemLinkItemType == ITEMTYPE_WEAPON or itemLinkItemType == ITEMTYPE_ARMOR or itemLinkItemType == ITEMTYPE_JEWELRY then
+    if not IsItemLinkSetCollectionPiece(itemData.itemLink) then return nil end
+    return not IsItemSetCollectionPieceUnlocked(GetItemLinkItemId(itemData.itemLink))
+  else
+    return false
+  end
 end
 
 function AGS_UGF.initAGS()
