@@ -21,9 +21,7 @@ function UnknownGearFilter:Initialize()
     icon = "/esoui/art/tutorial/tutorial_collections_tabicon_itemsets_%s.dds",
   }
 
-  --!need to get FILTER_ID.UNKNOWN_GEAR_FILTER registered in AGS FilterIds.lua
-	--MultiChoiceFilterBase.Initialize(self, FILTER_ID.UNKNOWN_GEAR_FILTER, AGS.class.FilterBase.GROUP_LOCAL, ("Unknown Gear"), filterIcons )
-  MultiChoiceFilterBase.Initialize(self, 999, AGS.class.FilterBase.GROUP_LOCAL, ("Unknown Gear"), filterIcons )
+	MultiChoiceFilterBase.Initialize(self, FILTER_ID.UNKNOWN_GEAR_FILTER, AGS.class.FilterBase.GROUP_LOCAL, ("Unknown Gear"), filterIcons )
 
   self:SetEnabledSubcategories({
     [SUB_CATEGORY_ID.ALL] = true,
@@ -41,8 +39,7 @@ function UnknownGearFilter:FilterLocalResult(itemData)
 end
 
 function AGS_UGF.initAGS()
-  --!need to get FILTER_ID.UNKNOWN_GEAR_FILTER registered in AGS FilterIds.lua
 	--MultiChoiceFilterBase.Initialize(self, FILTER_ID.UNKNOWN_GEAR_FILTER, AGS.class.FilterBase.GROUP_LOCAL, ("Unknown Gear"), filterIcons )
   AGS:RegisterFilter(UnknownGearFilter:New())
-  AGS:RegisterFilterFragment(AGS.class.MultiButtonFilterFragment:New(999))
+  AGS:RegisterFilterFragment(AGS.class.MultiButtonFilterFragment:New(FILTER_ID.UNKNOWN_GEAR_FILTER))
 end
