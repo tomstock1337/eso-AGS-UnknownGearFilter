@@ -6,11 +6,12 @@
 
 ## Title: AGS_UnknownGearFilter
 ## Description: Awesome Guildstore Extension that adds a gear knowledge filter that searches over Weapons, Armor, Jewelry
-## Version: 1.0
+## Version: 1.1
+## AddOnVersion:0100
 ## Author: tomstock
-## APIVersion: 100037
+## APIVersion: 101041 101042
 ## SavedVariables: AGS_UGFVars
-## DependsOn: AwesomeGuildStore LibAddonMenu-2.0>=34 LibAddonMenuMultiSelectDropdown
+## DependsOn: AwesomeGuildStore LibAddonMenu-2.0>=34
 
 bootstrap.lua
 AGS.lua
