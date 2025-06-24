@@ -2,7 +2,7 @@ local Addon = {}
 Addon.Name = "AGS_UnknownGearFilter"
 Addon.DisplayName = "AGS_UnknownGearFilter"
 Addon.Author = "tomstock"
-Addon.Version = "1.2"
+Addon.Version = "1.3"
 
 AGS_UGF.savedVars = {}
 
